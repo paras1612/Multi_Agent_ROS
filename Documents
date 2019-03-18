@@ -1,0 +1,7 @@
+Essential links
+wp syntax
+https://mavlink.io/en/messages/common.html#MISSION_ITEM
+param1, ... corresponds to command passed.
+
+command types and syntax
+https://mavlink.io/en/messages/common.html#mavlink-commands-mavcmd

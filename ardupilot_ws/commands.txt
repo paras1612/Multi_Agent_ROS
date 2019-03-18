@@ -1,0 +1,12 @@
+Run the following in new terminals.
+
+sim_vehicle.py -v ArduCopter --map --console -I 0
+sim_vehicle.py -v ArduCopter --map --console -I 1
+<Go in ardupilot_ws directory>
+catkin_make
+source ./devel/setup.sh
+roslaunch swarming multi_vehicle.launch
+rosrun swarming ArduCopter-modes-script.py
+rostopic list
+rqt_graph
+rqt
