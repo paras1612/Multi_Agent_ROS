@@ -12,9 +12,9 @@ longitude=0.0
 global vehicle
 def setGuidedMode(option = "1"):
     vehicle = '/vehicle' + option
-    rospy.wait_for_service(vechicle +'/mavros/set_mode')
+    rospy.wait_for_service(vehicle +'/mavros/set_mode')
     try:
-        flightModeService = rospy.ServiceProxy(vechicle + '/mavros/set_mode', mavros_msgs.srv.SetMode)
+        flightModeService = rospy.ServiceProxy(vehicle + '/mavros/set_mode', mavros_msgs.srv.SetMode)
         #http://wiki.ros.org/mavros/CustomModes for custom modes
         isModeChanged = flightModeService(custom_mode='GUIDED') #return true or false
     except rospy.ServiceException, e:
@@ -22,9 +22,9 @@ def setGuidedMode(option = "1"):
         
 def setStabilizeMode(option = '1'):
     vehicle = '/vehicle' + option
-    rospy.wait_for_service(vechicle +'/mavros/set_mode')
+    rospy.wait_for_service(vehicle +'/mavros/set_mode')
     try:
-        flightModeService = rospy.ServiceProxy(vechicle + '/mavros/set_mode', mavros_msgs.srv.SetMode)
+        flightModeService = rospy.ServiceProxy(vehicle + '/mavros/set_mode', mavros_msgs.srv.SetMode)
         #http://wiki.ros.org/mavros/CustomModes for custom modes
         isModeChanged = flightModeService(custom_mode='STABILIZE') #return true or false
     except rospy.ServiceException, e:
@@ -32,9 +32,9 @@ def setStabilizeMode(option = '1'):
 
 def setLandMode(option = '1'):
     vehicle = '/vehicle' + option
-    rospy.wait_for_service(vechicle + '/mavros/cmd/land')
+    rospy.wait_for_service(vehicle + '/mavros/cmd/land')
     try:
-        landService = rospy.ServiceProxy(vechicle + '/mavros/cmd/land', mavros_msgs.srv.CommandTOL)
+        landService = rospy.ServiceProxy(vehicle + '/mavros/cmd/land', mavros_msgs.srv.CommandTOL)
         #http://wiki.ros.org/mavros/CustomModes for custom modes
         isLanding = landService(altitude = 0, latitude = 0, longitude = 0, min_pitch = 0, yaw = 0)
     except rospy.ServiceException, e:
@@ -42,18 +42,18 @@ def setLandMode(option = '1'):
           
 def setArm(option = '1'):
     vehicle = '/vehicle' + option
-    rospy.wait_for_service(vechicle + '/mavros/cmd/arming')
+    rospy.wait_for_service(vehicle + '/mavros/cmd/arming')
     try:
-        armService = rospy.ServiceProxy(vechicle + '/mavros/cmd/arming', mavros_msgs.srv.CommandBool)
+        armService = rospy.ServiceProxy(vehicle + '/mavros/cmd/arming', mavros_msgs.srv.CommandBool)
         armService(True)
     except rospy.ServiceException, e:
         print "Service arm call failed: %s"%e
         
 def setDisarm(option = '1'):
     vehicle = '/vehicle' + option
-    rospy.wait_for_service(vechicle + '/mavros/cmd/arming')
+    rospy.wait_for_service(vehicle + '/mavros/cmd/arming')
     try:
-        armService = rospy.ServiceProxy(vechicle + '/mavros/cmd/arming', mavros_msgs.srv.CommandBool)
+        armService = rospy.ServiceProxy(vehicle + '/mavros/cmd/arming', mavros_msgs.srv.CommandBool)
         armService(False)
     except rospy.ServiceException, e:
         print "Service arm call failed: %s"%e
@@ -61,9 +61,9 @@ def setDisarm(option = '1'):
 
 def setTakeoffMode(option = '1'):
     vehicle = '/vehicle' + option
-    rospy.wait_for_service(vechicle + '/mavros/cmd/takeoff')
+    rospy.wait_for_service(vehicle + '/mavros/cmd/takeoff')
     try:
-        takeoffService = rospy.ServiceProxy(vechicle + '/mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL) 
+        takeoffService = rospy.ServiceProxy(vehicle + '/mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL) 
         takeoffService(altitude = 2, latitude = 0, longitude = 0, min_pitch = 0, yaw = 0)
     except rospy.ServiceException, e:
         print "Service takeoff call failed: %s"%e
@@ -93,7 +93,7 @@ def myLoop():
     vehicle = '1'
     while ((not rospy.is_shutdown())and (x in ['1','2','3','4','5','6','7'])):
         menu()
-        vehicle = raw_input("Enter vechicle number: ")
+        vehicle = raw_input("Enter vehicle number: ")
         x = raw_input("Enter your input: ");
         if (x=='1'):
             setGuidedMode(vehicle)

@@ -1,0 +1,3 @@
+sim_vehicle.py -v ArduCopter -L IIITD -I 1
+
+roslaunch mavros apm2.launch fcu_url:=udp://localhost:14560@
