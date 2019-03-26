@@ -1,6 +1,7 @@
 # mavros
 main commands, control scripts, swarm packages and other essentials.
 Open issues freely of any kind!
+To start new work, check [Tasks.md](https://github.com/paras1612/mavros/blob/master/Tasks.md) file
 
 # Requirements
 - Linux (Ubuntu 16.04 recommended)
