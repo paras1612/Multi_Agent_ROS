@@ -1,5 +1,6 @@
 # mavros
-main commands, control scripts, swarm packages and other essentials
+main commands, control scripts, swarm packages and other essentials.
+Open issues freely of any kind!
 
 # Requirements
 - Linux (Ubuntu 16.04 recommended)
