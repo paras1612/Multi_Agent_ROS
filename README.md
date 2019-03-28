@@ -6,6 +6,7 @@ To start new work, check [Tasks.md](https://github.com/paras1612/mavros/blob/mas
 # Requirements
 - Linux (Ubuntu 16.04 recommended)
 - [ROS](http://www.ros.org/install/)
+- [MAVROS](http://ardupilot.org/dev/docs/ros-install.html#installing-mavros)
 - [SITL(Software In The Loop)](http://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html)
 - Ground Control Stations
   - [QGroundControl](qgroundcontrol.com) (Recommended) 
