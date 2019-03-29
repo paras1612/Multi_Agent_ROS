@@ -36,6 +36,8 @@ def form(longitude, latitude):
 def next_waypoint(vehicle_number, latitude, longitude):
     publisher = rospy.Publisher('/vehicle' + str(vehicle_number) + '/mavros/setpoint_raw/global', GlobalPositionTarget, queue_size=10)
     pub = GlobalPositionTarget()
+    pub.coordinate_frame = 6
+    pub.type_mask = 4088
     pub.longitude = longitude
     pub.latitude = latitude
     publisher.publish(pub)
