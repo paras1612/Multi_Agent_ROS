@@ -13,7 +13,8 @@ from mavros_msgs.srv import *
 from mavros_msgs.msg import Waypoint, WaypointList 
 
 #lock = threading.Lock()
-path_to_waypoint_file = '/home/paras/Desktop/SITL/ardupilot/way.txt'
+#change the path before running
+path_to_waypoint_file = '/home/vishalsamal/ardupilot/way.txt'
 
 
 class LineBuilder:
