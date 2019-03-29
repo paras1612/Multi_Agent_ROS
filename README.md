@@ -14,8 +14,8 @@ To start new work, check [Tasks.md](https://github.com/paras1612/mavros/blob/mas
   
 # How to start?
 - Make a new ros workspace or use our ardupilot_ws
-- Move to the directory, source the workspace using `source ./devel/setup.bash`.
-- Remake the directory using `catkin_make`
+- Move to the directory, Remake the directory using `catkin_make`
+- source the workspace using `source ./devel/setup.bash`.
 - Now move to the directory containing script named demo-swarm.py
 - Open the file, change the path variable according to your file directory structure, save the file
 - Run `python demo-swarm.py`
