@@ -145,18 +145,18 @@ def takeoff_waypoint(curr_count, new_latitude, new_longitude):
         rospy.wait_for_service('vehicle' + str(curr_count) + '/mavros/mission/push')
         service = rospy.ServiceProxy('vehicle' + str(curr_count) + '/mavros/mission/push', WaypointPush)
         if service.call(0, wl.waypoints).success:
-            print 'write mission success'
+            print ('write mission success')
         else:
-            print 'write mission error'
+            print ('write mission error')
     except:
-        print "Service call failed: %s" % e
+        print ("Service call failed: %s" % e)
 
 def waypoint_clear_client(curr_count):
         try:
             response = rospy.ServiceProxy('vehicle' + str(curr_count) + '/mavros/mission/clear', WaypointClear)
             return response.call().success
-        except rospy.ServiceException, e:
-            print "Service call failed: %s" % e
+        except rospy.ServiceException:
+            print ("Service call failed: %s" % e)
             return False
 
 def setArm(option = '1'):
@@ -165,8 +165,8 @@ def setArm(option = '1'):
     try:
         armService = rospy.ServiceProxy(vehicle + '/mavros/cmd/arming', mavros_msgs.srv.CommandBool)
         armService(True)
-    except rospy.ServiceException, e:
-        print "Service arm call failed: %s"%e
+    except rospy.ServiceException:
+        print ("Service arm call failed: %s"%e)
         
 
 def get_position(data):
