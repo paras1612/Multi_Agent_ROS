@@ -1,6 +1,6 @@
 Essential links
 wp syntax
-https://mavlink.io/en/messages/common.html#MISSION_ITEM
+[waypoint_syntax](https://mavlink.io/en/messages/common.html#MISSION_ITEM)
 param1, ... corresponds to command passed.
 
 command types and syntax
