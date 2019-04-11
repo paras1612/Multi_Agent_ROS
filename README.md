@@ -13,7 +13,7 @@ To start new work, check [Tasks.md](https://github.com/paras1612/mavros/blob/mas
   - Mission Planner (On windows)
   
 # How to start?
-- Make a new ros workspace or use our ardupilot_ws
+- Make a new ros workspace or use our ardupilot_ws preferabely in same folder where SITL is installed. 
 - Move to the directory, Remake the directory using `catkin_make`
 - source the workspace using `source ./devel/setup.bash`.
 - Now move to the directory containing script named demo-swarm.py
