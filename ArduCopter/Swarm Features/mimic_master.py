@@ -10,18 +10,19 @@ def vel_callback(data, args):
 	drone_count = args[0]
 	curr_leader = args[1]
 	for i in range(1, drone_count+1):
-		if i is not curr_leader:
+		if i != curr_leader:
 			rospy.Publisher('/vehicle'+str(i)+'/mavros/setpoint_velocity/cmd_vel', TwistStamped, queue_size=10).publish(data)
 
-def orient_callback(data, args)
+def orient_callback(data, args):
 	drone_count = args[0]
+	curr_leader = args[1]
 	for i in range(1, drone_count+1):
-		if i is not curr_leader:
+		if i != curr_leader:
 			rospy.Publisher('/vehicle'+str(i)+'/mavros/global_position/compass_hdg', Float64, queue_size=10).publish(data)
 
 def moveSame(drone_count, curr_leader=1):
 	rospy.Subscriber("/vehicle"+str(curr_leader)+"/mavros/local_position/velocity_local", TwistStamped , vel_callback, (drone_count, curr_leader))
-	rospy.Subscriber("/vehicle"+str(curr_leader)+"/mavros/global_position/compass_hdg", Float64, orient_callback, (drone_count))
+	rospy.Subscriber("/vehicle"+str(curr_leader)+"/mavros/global_position/compass_hdg", Float64, orient_callback, (drone_count, curr_leader))
 	
 	
 if __name__ == '__main__':
@@ -31,5 +32,6 @@ if __name__ == '__main__':
 	args = parser.parse_args()
 	rospy.init_node('circle', anonymous=True)
 	rospy.Rate(10)
+	print()
 	moveSame(args.drone_count, args.curr_leader)
 	rospy.spin()
