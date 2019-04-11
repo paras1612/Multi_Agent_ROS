@@ -9,7 +9,7 @@ To start new work, check [Tasks.md](https://github.com/paras1612/mavros/blob/mas
 - [MAVROS](http://ardupilot.org/dev/docs/ros-install.html#installing-mavros)
 - [SITL(Software In The Loop)](http://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html)
 - Ground Control Stations
-  - [QGroundControl](http://www.qgroundcontrol.com) (Recommended) 
+  - [QGroundControl](http://qgroundcontrol.com) (Recommended) 
   - Mission Planner (On windows)
   
 # How to start?
