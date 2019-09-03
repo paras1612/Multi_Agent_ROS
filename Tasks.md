@@ -14,3 +14,6 @@
   - [ ] Tracing other vehicles
   - [ ] Tracking a object
   
+- [ ] Network Model
+  - [ ] Selecting protocols, model and data to transfer
+  - [ ] Making a local controller for distributed/decentralized system
